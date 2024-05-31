@@ -28,7 +28,7 @@ async function startServer() {
             if (err.name === "ValidationError" || err.name === "MongoError") {
                 res.status(400).json({ error: err.message });
             } else {
-                res.status(500).json({ error: "Internal Server Error" });
+                res.status(500).json({ error: "DB Internal Server Error" });
             }
         });
 
