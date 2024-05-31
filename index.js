@@ -5,19 +5,17 @@ import { MongoClient } from "mongodb";
 import router from "./Routes.js";
 
 dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 const MONGO_URL = process.env.MONGO_URL;
-const secretKey = process.env.SECRET_KEY;
+export const secretKey = process.env.SECRET_KEY;
 
 let client;
 
 async function connectDB() {
   try {
-    client = new MongoClient(MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    client = new MongoClient(MONGO_URL);
     await client.connect();
     console.log("Connected to MongoDB");
   } catch (err) {
@@ -39,4 +37,4 @@ app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-export { app, client, secretKey };
+export { app, client };
