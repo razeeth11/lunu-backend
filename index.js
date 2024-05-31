@@ -8,8 +8,8 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-const MONGO_URL = process.env.MONGO_URL;
-export const secretKey = process.env.SECRET_KEY;
+const MONGO_URL = 'mongodb+srv://lunu:lunu1234@cluster0.mxmqnga.mongodb.net/';
+export const secretKey = 'mysecretkeyissecret';
 
 let client;
 
