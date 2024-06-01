@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 const MONGO_URL = process.env.MONGO_URL;
 
 // Update MongoDB connection options
-const client = new MongoClient(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+export const client = new MongoClient(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function startServer() {
     try {
@@ -40,4 +40,4 @@ async function startServer() {
 
 startServer();
 
-export { app, client };
+export default appl;
